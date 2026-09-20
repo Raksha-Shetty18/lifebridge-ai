@@ -7,6 +7,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "node --watch index.js",
+    "build": "echo 'Backend ready'",
     "test": "node test/reasoning_diversity_test.js && node test/refine_test.js && node test/quality_check_test.js && node test/case_lifecycle_test.js && node test/api_endpoint_test.js && node test/e2e_qa_scenarios.js",
     "test:diversity": "node test/reasoning_diversity_test.js",
     "test:refine": "node test/refine_test.js",
