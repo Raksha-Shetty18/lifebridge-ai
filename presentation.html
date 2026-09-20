@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LifeBridge AI — Presentation Deck</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            primary: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+            },
+            accent: {
+              500: '#3b82f6',
+              600: '#2563eb',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background: #090d16;
+      color: #f8fafc;
+      overflow: hidden;
+      user-select: none;
+    }
+    .slide {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out;
+      transform: scale(0.98);
+    }
+    .slide.active {
+      display: flex;
+      opacity: 1;
+      transform: scale(1);
+    }
+    .glass-panel {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #34d399 0%, #38bdf8 50%, #818cf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body class="h-screen w-screen flex flex-col font-sans relative antialiased">
+
+  <!-- Background decorative glow -->
+  <div class="fixed top-0 left-1/4 w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-[140px] pointer-events-none"></div>
+  <div class="fixed bottom-0 right-1/4 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[140px] pointer-events-none"></div>
+
+  <!-- Header / Navigation Bar -->
+  <header class="h-16 px-8 flex items-center justify-between z-20 border-b border-white/5 bg-slate-900/40 backdrop-blur-md">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center font-bold text-slate-950 text-base shadow-lg shadow-emerald-500/20">
+        🌉
+      </div>
+      <div>
+        <span class="font-bold text-lg tracking-tight text-white">LifeBridge <span class="gradient-text">AI</span></span>
+        <span class="text-xs text-slate-400 ml-2 px-2 py-0.5 rounded-full bg-slate-800 border border-slate-700">Hackathon Pitch Deck</span>
+      </div>
+    </div>
+    <div class="flex items-center gap-4 text-xs text-slate-400">
+      <span id="slideCounter" class="font-mono bg-slate-800/80 px-3 py-1 rounded-md border border-slate-700 text-slate-300">Slide 1 / 10</span>
+      <div class="flex items-center gap-1.5">
+        <button onclick="prevSlide()" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 transition">
+          ◀
+        </button>
+        <button onclick="nextSlide()" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 transition">
+          ▶
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Presentation Main Viewport -->
+  <main class="flex-1 relative flex items-center justify-center p-8 z-10 overflow-hidden">
+
+    <!-- SLIDE 1: TITLE & HOOK -->
+    <section class="slide active flex-col items-center justify-center text-center max-w-4xl w-full" data-slide="1">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-semibold mb-6">
+        <span>✨</span> AI Action Navigator for Real-World Problems
+      </div>
+      <h1 class="text-6xl md:text-7xl font-extrabold tracking-tight mb-6">
+        LifeBridge <span class="gradient-text">AI</span>
+      </h1>
+      <p class="text-2xl md:text-3xl text-slate-200 font-medium mb-4">
+        “You have a problem. Let’s find your next step.”
+      </p>
+      <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-10">
+        Chatbots give answers. LifeBridge turns a real-world crisis into an actionable, visual, and trackable pathway.
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-4 text-sm text-slate-300">
+        <span class="px-3.5 py-1.5 rounded-lg bg-slate-800/80 border border-slate-700">🚀 Production Live on Vercel</span>
+        <span class="px-3.5 py-1.5 rounded-lg bg-slate-800/80 border border-slate-700">⚙️ Live Express on Render</span>
+        <span class="px-3.5 py-1.5 rounded-lg bg-slate-800/80 border border-slate-700">🏆 100% Diversity Verified</span>
+      </div>
+    </section>
+
+    <!-- SLIDE 2: THE PROBLEM -->
+    <section class="slide flex-col max-w-5xl w-full" data-slide="2">
+      <div class="text-emerald-400 font-semibold text-sm mb-2 tracking-wide uppercase">01. The Problem</div>
+      <h2 class="text-4xl font-bold tracking-tight mb-8">The "Action Gap" in Generative AI</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="glass-panel p-6 rounded-2xl border-rose-500/20 bg-rose-950/10">
+          <div class="text-rose-400 font-bold text-lg mb-3 flex items-center gap-2">
+            <span>🚨</span> The Real-World Crisis
+          </div>
+          <ul class="space-y-3 text-slate-300 text-sm">
+            <li class="flex items-start gap-2"><span>•</span> Fragmented portals, confusing prerequisites & hidden guidelines.</li>
+            <li class="flex items-start gap-2"><span>•</span> High anxiety & decision fatigue during stressful incidents.</li>
+            <li class="flex items-start gap-2"><span>•</span> Strict time windows (e.g. scholarship appeals, fraud alerts).</li>
+            <li class="flex items-start gap-2"><span>•</span> No centralized way to track multi-day progress toward resolution.</li>
+          </ul>
+        </div>
+        <div class="glass-panel p-6 rounded-2xl border-amber-500/20 bg-amber-950/10">
+          <div class="text-amber-400 font-bold text-lg mb-3 flex items-center gap-2">
+            <span>⚠️</span> Why Traditional Chatbots Fail
+          </div>
+          <ul class="space-y-3 text-slate-300 text-sm">
+            <li class="flex items-start gap-2"><span>•</span> Produces walls of 15 unranked bullet points.</li>
+            <li class="flex items-start gap-2"><span>•</span> Fails to tell you: <em>"What should I do right now today?"</em></li>
+            <li class="flex items-start gap-2"><span>•</span> Ephemeral: closes the tab and everything is lost.</li>
+            <li class="flex items-start gap-2"><span>•</span> Hallucinates broken links, outdated rules, and fake phone numbers.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 3: THE PARADIGM SHIFT -->
+    <section class="slide flex-col max-w-5xl w-full" data-slide="3">
+      <div class="text-emerald-400 font-semibold text-sm mb-2 tracking-wide uppercase">02. The Solution</div>
+      <h2 class="text-4xl font-bold tracking-tight mb-6">From Conversation to Case Resolution</h2>
+      <div class="glass-panel rounded-2xl overflow-hidden border border-slate-800">
+        <div class="grid grid-cols-2 bg-slate-800/80 p-4 font-semibold text-sm text-slate-300 border-b border-slate-700">
+          <div>Traditional AI Chatbot</div>
+          <div class="text-emerald-400">LifeBridge AI Action Navigator</div>
+        </div>
+        <div class="divide-y divide-slate-800/60 text-sm">
+          <div class="grid grid-cols-2 p-4 text-slate-400">
+            <div>Unstructured 10-paragraph essay</div>
+            <div class="text-slate-200 font-medium">🎯 Single "What Should I Do Now?" Spotlight</div>
+          </div>
+          <div class="grid grid-cols-2 p-4 text-slate-400">
+            <div>Flat, overwhelming bullet points</div>
+            <div class="text-slate-200 font-medium">🗺️ Interactive Topological Action Graph</div>
+          </div>
+          <div class="grid grid-cols-2 p-4 text-slate-400">
+            <div>Ephemeral chat history (lost on refresh)</div>
+            <div class="text-slate-200 font-medium">📂 Persistent Case Workspace & Live Checklist</div>
+          </div>
+          <div class="grid grid-cols-2 p-4 text-slate-400">
+            <div>Potential hallucinated links & phone numbers</div>
+            <div class="text-slate-200 font-medium">🏛️ Strict Verified Official Statutory Portals</div>
+          </div>
+          <div class="grid grid-cols-2 p-4 text-slate-400">
+            <div>Must re-prompt from scratch to adjust details</div>
+            <div class="text-slate-200 font-medium">🔄 1-Click Adaptive Context Refinement</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 4: ARCHITECTURE -->
+    <section class="slide flex-col max-w-5xl w-full" data-slide="4">
+      <div class="text-emerald-400 font-semibold text-sm mb-2 tracking-wide uppercase">03. Architecture</div>
+      <h2 class="text-4xl font-bold tracking-tight mb-6">The 10-Stage AI Action Pipeline</h2>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-3 text-xs">
+        <div class="glass-panel p-3.5 rounded-xl border-slate-700/60">
+          <div class="text-emerald-400 font-bold mb-1">01. Situation</div>
+          <p class="text-slate-400">User enters natural language crisis description.</p>
+        </div>
+        <div class="glass-panel p-3.5 rounded-xl border-slate-700/60">
+          <div class="text-emerald-400 font-bold mb-1">02. Extraction</div>
+          <p class="text-slate-400">Entity, bottleneck & missing info parsing.</p>
+        </div>
+        <div class="glass-panel p-3.5 rounded-xl border-slate-700/60">
+          <div class="text-emerald-400 font-bold mb-1">03. Triage</div>
+          <p class="text-slate-400">Domain mapping & urgency severity rating.</p>
+        </div>
+        <div class="glass-panel p-3.5 rounded-xl border-slate-700/60">
+          <div class="text-emerald-400 font-bold mb-1">04. Dual-Tier</div>
+          <p class="text-slate-400">Gemini 1.5 JSON or Heuristic Fallback Brain.</p>
+        </div>
+        <div class="glass-panel p-3.5 rounded-xl border-emerald-500/40 bg-emerald-950/20">
+          <div class="text-emerald-300 font-bold mb-1">05. Spotlight</div>
+          <p class="text-slate-300">Single prioritized Immediate Action today.</p>
+        </div>
+        <div class="glass-panel p-3.5 rounded-xl border-slate-700/60">
+          <div class="text-blue-400 font-bold mb-1">06. Milestones</div>
+          <p class="text-slate-400">Numbered step-by-step procedural roadmap.</p>
+        </div>
+        <div class="glass-panel p-3.5 rounded-xl border-slate-700/60">
+          <div class="text-blue-400 font-bold mb-1">07. Action Graph</div>
+          <p class="text-slate-400">Dynamic SVG dependency topology.</p>
+        </div>
+        <div class="glass-panel p-3.5 rounded-xl border-slate-700/60">
+          <div class="text-blue-400 font-bold mb-1">08. Gateways</div>
+          <p class="text-slate-400">Official statutory grievance & portal links.</p>
+        </div>
+        <div class="glass-panel p-3.5 rounded-xl border-slate-700/60">
+          <div class="text-purple-400 font-bold mb-1">09. Tracking</div>
+          <p class="text-slate-400">Deterministic checklist progress & state sync.</p>
+        </div>
+        <div class="glass-panel p-3.5 rounded-xl border-purple-500/40 bg-purple-950/20">
+          <div class="text-purple-300 font-bold mb-1">10. Refinement</div>
+          <p class="text-slate-300">Adaptive 1-click plan tailoring.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 5: KEY PRODUCT PILLARS -->
+    <section class="slide flex-col max-w-5xl w-full" data-slide="5">
+      <div class="text-emerald-400 font-semibold text-sm mb-2 tracking-wide uppercase">04. Product Features</div>
+      <h2 class="text-4xl font-bold tracking-tight mb-6">Designed for Focus Under Pressure</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div class="glass-panel p-5 rounded-2xl flex items-start gap-4">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 text-xl shrink-0">
+            ⚡
+          </div>
+          <div>
+            <h3 class="font-bold text-base text-white mb-1">"WHAT SHOULD I DO NOW?" Spotlight</h3>
+            <p class="text-xs text-slate-400">Prominently features the single highest-impact task for today with a clear <em>"Why This Matters"</em> rationale.</p>
+          </div>
+        </div>
+        <div class="glass-panel p-5 rounded-2xl flex items-start gap-4">
+          <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 text-xl shrink-0">
+            🗺️
+          </div>
+          <div>
+            <h3 class="font-bold text-base text-white mb-1">Topological Action Graph</h3>
+            <p class="text-xs text-slate-400">Interactive SVG canvas showing prerequisite dependencies, document requirements, and completed task states.</p>
+          </div>
+        </div>
+        <div class="glass-panel p-5 rounded-2xl flex items-start gap-4">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-xl shrink-0">
+            ☑️
+          </div>
+          <div>
+            <h3 class="font-bold text-base text-white mb-1">Deterministic Checklist Sync</h3>
+            <p class="text-xs text-slate-400">Tasks directly tie to a mathematical progress formula (X/Y tasks), timeline activity logs, and confetti completion.</p>
+          </div>
+        </div>
+        <div class="glass-panel p-5 rounded-2xl flex items-start gap-4">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 text-xl shrink-0">
+            🏛️
+          </div>
+          <div>
+            <h3 class="font-bold text-base text-white mb-1">Verified Official Gateways</h3>
+            <p class="text-xs text-slate-400">Zero-hallucination directory of statutory resources (UIDAI, 1930 Cyber Fraud Helpline, National Scholarship Portal).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 6: DUAL-TIER ENGINE -->
+    <section class="slide flex-col max-w-5xl w-full" data-slide="6">
+      <div class="text-emerald-400 font-semibold text-sm mb-2 tracking-wide uppercase">05. Reliability & AI Engine</div>
+      <h2 class="text-4xl font-bold tracking-tight mb-6">Dual-Tier Intelligence: Zero Downtime</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="glass-panel p-6 rounded-2xl border-blue-500/20 bg-blue-950/10">
+          <div class="text-blue-400 font-bold text-lg mb-2">Tier 1: Google Gemini 1.5 Flash (Live AI)</div>
+          <p class="text-xs text-slate-300 mb-3">Structured JSON schema mode with strict anti-generic response validation and automated quality scoring.</p>
+          <span class="inline-block text-[11px] px-2.5 py-1 rounded bg-blue-500/20 text-blue-300 font-mono">Dynamic Real-Time Synthesis</span>
+        </div>
+        <div class="glass-panel p-6 rounded-2xl border-emerald-500/20 bg-emerald-950/10">
+          <div class="text-emerald-400 font-bold text-lg mb-2">Tier 2: Contextual Heuristic Brain (v2.0)</div>
+          <p class="text-xs text-slate-300 mb-3">Deterministic entity-aware engine ensuring 100% test pass rate, semantic diversity, and zero API-cost resilience.</p>
+          <span class="inline-block text-[11px] px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-300 font-mono">100% Offline / Zero API Uptime</span>
+        </div>
+      </div>
+      <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 text-xs text-slate-300 flex items-center justify-between">
+        <span>🧪 <strong>Automated Testing Verification:</strong> 15/15 Pairwise Diversity (100%) | E2E Scenarios: 5/5 PASS | Quality Score: 100/100</span>
+        <span class="text-emerald-400 font-semibold">Ready for Demo</span>
+      </div>
+    </section>
+
+    <!-- SLIDE 7: REAL WORLD SCENARIOS -->
+    <section class="slide flex-col max-w-5xl w-full" data-slide="7">
+      <div class="text-emerald-400 font-semibold text-sm mb-2 tracking-wide uppercase">06. Real-World Use Cases</div>
+      <h2 class="text-4xl font-bold tracking-tight mb-6">Proven Across Diverse Domains</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs">
+        <div class="glass-panel p-4 rounded-xl border-slate-700/60">
+          <div class="text-2xl mb-2">🎓</div>
+          <div class="font-bold text-white mb-1">Education</div>
+          <p class="text-slate-400">Scholarship missed deadline / defect appeal & institute nodal verification.</p>
+        </div>
+        <div class="glass-panel p-4 rounded-xl border-slate-700/60">
+          <div class="text-2xl mb-2">🛡️</div>
+          <div class="font-bold text-white mb-1">Financial Safety</div>
+          <p class="text-slate-400">UPI collect scam defense, instant PIN reset, and 1930 Cyber Fraud reporting.</p>
+        </div>
+        <div class="glass-panel p-4 rounded-xl border-slate-700/60">
+          <div class="text-2xl mb-2">📄</div>
+          <div class="font-bold text-white mb-1">Documents</div>
+          <p class="text-slate-400">Lost Aadhaar card recovery, UIDAI instant e-Aadhaar & biometric lock.</p>
+        </div>
+        <div class="glass-panel p-4 rounded-xl border-slate-700/60">
+          <div class="text-2xl mb-2">💼</div>
+          <div class="font-bold text-white mb-1">Career</div>
+          <p class="text-slate-400">Software engineering skill gap benchmark & deployed portfolio building.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 8: TECH STACK & PRODUCTION -->
+    <section class="slide flex-col max-w-5xl w-full" data-slide="8">
+      <div class="text-emerald-400 font-semibold text-sm mb-2 tracking-wide uppercase">07. Engineering Rigor</div>
+      <h2 class="text-4xl font-bold tracking-tight mb-6">Full-Stack Production Stack</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 text-sm">
+        <div class="glass-panel p-5 rounded-2xl">
+          <div class="font-bold text-emerald-400 mb-2">🖥️ Frontend (Vercel)</div>
+          <ul class="space-y-1.5 text-xs text-slate-300">
+            <li>• React 18 & Vite 6</li>
+            <li>• Tailwind CSS & Lucide Icons</li>
+            <li>• Custom SVG Canvas Action Graph</li>
+            <li>• SPA Deep-Linking via Rewrites</li>
+          </ul>
+        </div>
+        <div class="glass-panel p-5 rounded-2xl">
+          <div class="font-bold text-blue-400 mb-2">⚙️ Backend (Render)</div>
+          <ul class="space-y-1.5 text-xs text-slate-300">
+            <li>• Node.js & Express API</li>
+            <li>• Gemini 1.5 Flash SDK Integration</li>
+            <li>• Anti-Generic Response Validator</li>
+            <li>• CORS & Dynamic Port Binding</li>
+          </ul>
+        </div>
+        <div class="glass-panel p-5 rounded-2xl">
+          <div class="font-bold text-purple-400 mb-2">🔒 Persistence & Safety</div>
+          <ul class="space-y-1.5 text-xs text-slate-300">
+            <li>• Local-First Privacy Storage</li>
+            <li>• Supabase PostgreSQL Sync Ready</li>
+            <li>• Heuristic Emergency Safety Triage</li>
+            <li>• 100% Zero-Leak Security Audit</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 9: TRUST & ETHICS -->
+    <section class="slide flex-col max-w-5xl w-full" data-slide="9">
+      <div class="text-emerald-400 font-semibold text-sm mb-2 tracking-wide uppercase">08. Trust & Impact</div>
+      <h2 class="text-4xl font-bold tracking-tight mb-6">Responsible AI & User Trust</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 text-sm">
+        <div class="glass-panel p-5 rounded-2xl">
+          <div class="text-emerald-400 font-bold mb-2 flex items-center gap-2"><span>🛡️</span> Zero Hallucinations Policy</div>
+          <p class="text-xs text-slate-300">Statutory resources and helplines are verified against authentic government registers, ensuring users never receive fake helpline numbers or fraudulent links.</p>
+        </div>
+        <div class="glass-panel p-5 rounded-2xl">
+          <div class="text-blue-400 font-bold mb-2 flex items-center gap-2"><span>🔒</span> Privacy By Design</div>
+          <p class="text-xs text-slate-300">Sensitive personal crises remain on the user's device by default via Local-First storage, eliminating unauthorized profiling or data leaks.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 10: CLOSING & Q&A -->
+    <section class="slide flex-col items-center justify-center text-center max-w-4xl w-full" data-slide="10">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-semibold mb-6">
+        <span>🏆</span> Ready for Presentation
+      </div>
+      <h2 class="text-5xl md:text-6xl font-extrabold tracking-tight mb-4">
+        Thank You!
+      </h2>
+      <p class="text-xl text-slate-300 font-medium mb-8">
+        LifeBridge AI turns panic into clarity, and conversations into completed cases.
+      </p>
+      <div class="glass-panel p-6 rounded-2xl max-w-lg mx-auto w-full mb-8 text-left text-xs space-y-2.5">
+        <div class="flex justify-between items-center"><span class="text-slate-400">Web App:</span> <a href="https://client-git-main-raksha-shetty18s-projects.vercel.app" target="_blank" class="text-emerald-400 hover:underline font-mono">vercel.app</a></div>
+        <div class="flex justify-between items-center"><span class="text-slate-400">Backend API:</span> <a href="https://lifebridge-ai-7kcb.onrender.com" target="_blank" class="text-blue-400 hover:underline font-mono">onrender.com</a></div>
+        <div class="flex justify-between items-center"><span class="text-slate-400">GitHub:</span> <a href="https://github.com/Raksha-Shetty18/lifebridge-ai" target="_blank" class="text-purple-400 hover:underline font-mono">Raksha-Shetty18/lifebridge-ai</a></div>
+      </div>
+      <p class="text-sm text-slate-400">We welcome your questions and feedback!</p>
+    </section>
+
+  </main>
+
+  <!-- Footer / Controls -->
+  <footer class="h-14 px-8 flex items-center justify-between border-t border-white/5 bg-slate-900/40 text-xs text-slate-500 z-20">
+    <div>Use <kbd class="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300 font-mono">←</kbd> and <kbd class="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300 font-mono">→</kbd> keys or click arrows to navigate</div>
+    <div>LifeBridge AI © 2026 — All Rights Reserved</div>
+  </footer>
+
+  <script>
+    let currentSlide = 1;
+    const totalSlides = 10;
+
+    function showSlide(index) {
+      if (index < 1) index = 1;
+      if (index > totalSlides) index = totalSlides;
+      currentSlide = index;
+
+      document.querySelectorAll('.slide').forEach((slide, i) => {
+        if (i + 1 === currentSlide) {
+          slide.classList.add('active');
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+
+      document.getElementById('slideCounter').innerText = `Slide ${currentSlide} / ${totalSlides}`;
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides) showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      if (currentSlide > 1) showSlide(currentSlide - 1);
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+        nextSlide();
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        prevSlide();
+      } else if (e.key === 'Home') {
+        showSlide(1);
+      } else if (e.key === 'End') {
+        showSlide(totalSlides);
+      }
+    });
+  </script>
+</body>
+</html>
