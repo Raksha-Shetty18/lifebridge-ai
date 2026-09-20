@@ -1,0 +1,25 @@
+{
+  "name": "lifebridge-server",
+  "version": "1.0.0",
+  "description": "Backend API service for LifeBridge AI",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js",
+    "test": "node test/reasoning_diversity_test.js && node test/refine_test.js && node test/quality_check_test.js && node test/case_lifecycle_test.js && node test/api_endpoint_test.js && node test/e2e_qa_scenarios.js",
+    "test:diversity": "node test/reasoning_diversity_test.js",
+    "test:refine": "node test/refine_test.js",
+    "test:quality": "node test/quality_check_test.js",
+    "test:lifecycle": "node test/case_lifecycle_test.js",
+    "test:api": "node test/api_endpoint_test.js",
+    "test:e2e": "node test/e2e_qa_scenarios.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.0",
+    "@supabase/supabase-js": "^2.49.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  }
+}

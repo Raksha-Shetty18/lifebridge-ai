@@ -1,0 +1,27 @@
+{
+  "name": "lifebridge-ai",
+  "version": "1.0.0",
+  "description": "LifeBridge AI — AI Action Navigator for real-life problems",
+  "private": true,
+  "scripts": {
+    "start": "node server/index.js",
+    "server": "node server/index.js",
+    "client": "npm --prefix client run dev",
+    "dev": "concurrently \"npm --prefix server run dev\" \"npm --prefix client run dev\"",
+    "build": "npm --prefix client run build",
+    "test": "npm --prefix server test",
+    "install:all": "npm install && npm --prefix server install && npm --prefix client install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": [
+    "ai",
+    "action-navigator",
+    "decision-support",
+    "life-assistant",
+    "hackathon"
+  ],
+  "author": "LifeBridge Team",
+  "license": "MIT"
+}
