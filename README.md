@@ -3,6 +3,20 @@
 > **“You have a problem. Let’s find your next step.”**  
 > *“Chatbots give answers. LifeBridge turns a real-world problem into an actionable, trackable pathway.”*
 
+[![Production Status](https://img.shields.io/badge/Production-Live-success?style=for-the-badge&logo=vercel)](https://client-git-main-raksha-shetty18s-projects.vercel.app)
+[![Backend Status](https://img.shields.io/badge/Backend-Render-46E3B7?style=for-the-badge&logo=render)](https://lifebridge-ai-7kcb.onrender.com/api/health)
+[![Tests Passing](https://img.shields.io/badge/Tests-100%25_Passing-brightgreen?style=for-the-badge)](https://github.com/Raksha-Shetty18/lifebridge-ai)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+
+---
+
+## 🌐 Live Production Links
+
+* 🖥️ **Live Web Application (Frontend)**: **[https://client-git-main-raksha-shetty18s-projects.vercel.app](https://client-git-main-raksha-shetty18s-projects.vercel.app)**
+* ⚙️ **Live API Service (Backend)**: **[https://lifebridge-ai-7kcb.onrender.com](https://lifebridge-ai-7kcb.onrender.com)**
+* 📡 **Live Health Endpoint**: **[https://lifebridge-ai-7kcb.onrender.com/api/health](https://lifebridge-ai-7kcb.onrender.com/api/health)**
+* 📂 **GitHub Repository**: **[https://github.com/Raksha-Shetty18/lifebridge-ai](https://github.com/Raksha-Shetty18/lifebridge-ai)**
+
 ---
 
 ## 🎯 The Problem
